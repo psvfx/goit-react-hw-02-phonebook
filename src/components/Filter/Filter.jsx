@@ -1,5 +1,7 @@
+import { FilterInput } from './Filter.style';
+
 export const Filter = ({ filter, onFilterChange }) => (
-  <input
+  <FilterInput
     type="text"
     placeholder="Search by name"
     value={filter}

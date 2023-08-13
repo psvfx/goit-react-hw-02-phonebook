@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+
 import { nanoid } from 'nanoid';
+
 import { ContactForm } from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
 import { Filter } from './Filter/Filter';
+
+import { GlobalStyled } from './GlobalStyle';
+import { Layout } from './Layout';
 
 export class App extends Component {
   state = {
@@ -55,7 +60,7 @@ export class App extends Component {
     const filteredContacts = this.getFilteredContacts();
 
     return (
-      <div>
+      <Layout>
         <h1>Phonebook</h1>
         <ContactForm onAddContact={this.handleAddContact} />
 
@@ -65,7 +70,8 @@ export class App extends Component {
           contacts={filteredContacts}
           onDeleteContact={this.handleDeleteContact}
         />
-      </div>
+        <GlobalStyled />
+      </Layout>
     );
   }
 }
